@@ -1,9 +1,8 @@
 import React, { ChangeEvent, useContext, useState, useEffect } from 'react';
 import { ListItem, Checkbox } from '@material-ui/core';
 
-import { ModuleContext } from "../../context/ModuleContext";
-
 import * as S from "./style";
+import { stringify } from 'querystring';
 
 interface SubmoduleProps {
   title: string;
@@ -34,23 +33,27 @@ export function Submodule(props: SubmoduleProps) {
 
   useEffect(() =>{
     setChecked({...checked, listing: props.moduleCheckedState.moduleListing})
-  }, [props.moduleCheckedState.moduleListing])
+  }, [props.moduleCheckedState.moduleListing]);
 
   useEffect(() =>{
     setChecked({...checked, details: props.moduleCheckedState.moduleDetails})
-  }, [props.moduleCheckedState.moduleDetails])
+  }, [props.moduleCheckedState.moduleDetails]);
 
   useEffect(() =>{
     setChecked({...checked, create: props.moduleCheckedState.moduleCreate})
-  }, [props.moduleCheckedState.moduleCreate])
+  }, [props.moduleCheckedState.moduleCreate]);
 
   useEffect(() =>{
     setChecked({...checked, edit: props.moduleCheckedState.moduleEdit})
-  }, [props.moduleCheckedState.moduleEdit])
+  }, [props.moduleCheckedState.moduleEdit]);
 
   useEffect(() =>{
     setChecked({...checked, remove: props.moduleCheckedState.moduleRemove})
-  }, [props.moduleCheckedState.moduleRemove])
+  }, [props.moduleCheckedState.moduleRemove]);
+
+  useEffect(() =>{
+    localStorage.setItem(`@mobix:${props.title}`, JSON.stringify(checked));
+  }, [props.moduleCheckedState.moduleRemove, checked])
   
   return (
     <S.Container>

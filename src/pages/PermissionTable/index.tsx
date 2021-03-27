@@ -1,6 +1,7 @@
 import { Checkbox, ListItem } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Module } from '../../components/Module';
+import { getPermissions } from '../../utils/persistedState';
 
 import * as S from "./style";
 
@@ -89,8 +90,7 @@ export function PermissionTable() {
         rootChecked={rootChecked} 
       />
 
-
-      <button type="button">CADASTRAR</button>
+      <button type="button" onClick={getPermissions}>CADASTRAR</button>
     </S.Container>
   );
 }
