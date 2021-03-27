@@ -10,7 +10,6 @@ export const Container = styled.div`
     line-height: ${theme.lineHeight.pageTitle};
   }
 
-
   button {
     display: flex;
     justify-content: center;
@@ -31,10 +30,29 @@ export const Container = styled.div`
 `;
 
 export const Permissions = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr);
 
   margin-top: 4rem;
   margin-bottom: 1rem;
 
+  strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    margin: 0 auto;
+  }
+`;
+
+export const TableHeader = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background-color: ${theme.colors.titleBackground};
+
+ & > span {
+    width: inherit;
+    margin: 0 auto;
+  }
 `;

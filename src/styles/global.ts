@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body { 
-    background-color: ${theme.colors.backgroundColor};
+    /* background-color: ${theme.colors.defaultBackground}; */
   }
 
   body, input, textarea, button {

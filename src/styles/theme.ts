@@ -1,9 +1,9 @@
 
 export default {
   colors: {
-    backgroundColor: '#E5E5E5',
-    titleBG: '#EFF1F1',
-    modulesBG: '#F8F8F8',
+    defaultBackground: '#E5E5E5',
+    titleBackground: '#EFF1F1',
+    modulesBackground: '#F8F8F8',
     toggles: '#C4C4C4',
     button: '#6B7375',
   },
